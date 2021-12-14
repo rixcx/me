@@ -1,4 +1,93 @@
-body p {
-  font-size: 30px;
-  font-weight: 800;
+/* ------------- index ------------- */
+@import url("https://fonts.googleapis.com/css2?family=Murecho&family=Poppins:wght@400;600;700&display=swap");
+body {
+  font-family: "Murecho", sans-serif;
+  color: #272727;
+}
+
+.index {
+  background: #F8F8F8;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 70px;
+  border-bottom: 2px #272727 solid;
+}
+@media screen and (max-width: 767px) {
+  .header {
+    height: 60px;
+  }
+}
+.header__ttl {
+  width: calc(100% - 90px);
+  padding-left: 30px;
+  font-size: 26px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+@media screen and (max-width: 767px) {
+  .header__ttl {
+    width: calc(100% - 70px);
+    font-size: 24px;
+    padding-left: 20px;
+  }
+}
+.header__btn {
+  width: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-left: 2px #272727 solid;
+}
+@media screen and (max-width: 767px) {
+  .header__btn {
+    width: 70px;
+  }
+}
+.header__nav {
+  display: none;
+}
+
+.mv {
+  position: relative;
+  height: 400px;
+  background: url("/img/img_mv_pc.png") no-repeat center/cover;
+}
+@media screen and (max-width: 767px) {
+  .mv {
+    height: 553px;
+    background: url("/img/img_mv_sp.png") no-repeat center/cover;
+  }
+}
+.mv__txt {
+  position: absolute;
+  top: 220px;
+  left: 10%;
+  font-size: 44px;
+  color: #022B53;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+@media screen and (max-width: 767px) {
+  .mv__txt {
+    top: 170px;
+    left: 20px;
+    font-size: 42px;
+  }
 }

@@ -1,6 +1,118 @@
-body {
-	p {
-		font-size: 30px;
-		font-weight: 800;
+/* ------------- index ------------- */
+@charset "UTF-8";
+
+
+// -------- variable --------//
+$txt-color: #272727;
+$main-color: #022B53;
+$accent-color: #F77272;
+$sub-color: #FCCC93;
+$bg-color: #F8F8F8;
+
+@import url('https://fonts.googleapis.com/css2?family=Murecho&family=Poppins:wght@400;600;700&display=swap');
+@mixin accent-font {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+}
+
+@mixin body-font {
+	font-family: 'Murecho', sans-serif;
+}
+
+
+// -------- mediaquery --------//
+$breakpoint: (
+	sp: 'screen and (max-width: 767px)',
+	pc: 'screen and (min-width: 1040px)'
+	);
+
+@mixin mediaquery($device) {
+	@media #{map-get($breakpoint, $device)} {
+		@content;
 	}
 }
+
+
+// -------- index --------//
+body {
+	@include body-font;
+	color: $txt-color;
+}
+
+.index {
+	background: $bg-color;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 70px;
+	border-bottom: 2px $txt-color solid;
+
+	@include mediaquery(sp) {
+		height: 60px;
+	}
+
+	&__ttl {
+		width: calc(100% - 90px);
+		padding-left: 30px;
+		font-size: 26px;
+		@include accent-font;
+
+		@include mediaquery(sp) {
+			width: calc(100% - 70px);
+			font-size: 24px;
+			padding-left: 20px;
+		}
+	}
+
+	&__btn {
+		width: 90px;
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		border-left: 2px $txt-color solid;
+
+		@include mediaquery(sp) {
+			width: 70px;
+		}
+	}
+
+	&__nav {
+		display: none;
+	}
+}//header
+
+.main {
+
+}//main
+
+.mv {
+	position: relative;
+	height: 400px;
+	background: url("/img/img_mv_pc.png") no-repeat center/cover;
+
+	@include mediaquery(sp) {
+		height: 553px;
+		background: url("/img/img_mv_sp.png") no-repeat center/cover;
+	}
+
+	&__txt {
+		position: absolute;
+		top: 220px;
+		left: 10%;
+		font-size: 44px;
+		color: $main-color;
+		@include accent-font;
+
+		@include mediaquery(sp) {
+			top: 170px;
+			left: 20px;
+			font-size: 42px;
+		}
+	}
+}//mv
