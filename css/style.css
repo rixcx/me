@@ -67,12 +67,12 @@ body {
 .mv {
   position: relative;
   height: 400px;
-  background: url("/img/img_mv_pc.png") no-repeat center/cover;
+  background: url("/me/img/img_mv_pc.png") no-repeat center/cover;
 }
 @media screen and (max-width: 767px) {
   .mv {
     height: 553px;
-    background: url("/img/img_mv_sp.png") no-repeat center/cover;
+    background: url("/me/img/img_mv_sp.png") no-repeat center/cover;
   }
 }
 .mv__txt {
