@@ -15,19 +15,23 @@ const autoprefixer = require("gulp-autoprefixer");
 //----------------------------------------------------------------------
 //  関数定義
 //----------------------------------------------------------------------
-function compile(done) {
-  src("css/*.scss")
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(dest("css"));
-  done();
-}
+gulp.task('compile', function(done) {
+	src("css/*.scss")
+	.pipe(plumber())
+	.pipe(sass())
+	.pipe(autoprefixer())
+	.pipe(dest("css"));
+	done();
+})
+
+gulp.task('watch', function() {
+	gulp.watch('css/*.scss', gulp.series('compile'))
+})
 
 //----------------------------------------------------------------------
 //  タスク定義
 //----------------------------------------------------------------------
-exports.sass = series(compile);
+gulp.task('default', gulp.series('watch'))
 
 /************************************************************************/
 /*  END OF FILE                                                         */
