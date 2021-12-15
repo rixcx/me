@@ -1,4 +1,4 @@
-/* ------------- index ------------- */
+/* ----------------- index ----------------- */
 @charset "UTF-8";
 
 
@@ -9,22 +9,12 @@ $accent-color: #F77272;
 $sub-color: #FCCC93;
 $bg-color: #F8F8F8;
 
-@import url('https://fonts.googleapis.com/css2?family=Murecho&family=Poppins:wght@400;600;700&display=swap');
-@mixin accent-font {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 600;
-}
-
-@mixin body-font {
-	font-family: 'Murecho', sans-serif;
-}
-
 
 // -------- mediaquery --------//
 $breakpoint: (
 	sp: 'screen and (max-width: 767px)',
 	pc: 'screen and (min-width: 1040px)'
-	);
+);
 
 @mixin mediaquery($device) {
 	@media #{map-get($breakpoint, $device)} {
@@ -33,10 +23,44 @@ $breakpoint: (
 }
 
 
+// -------- mixin --------//
+@import url('https://fonts.googleapis.com/css2?family=Murecho&family=Poppins:wght@400;600;700&display=swap');
+@mixin accent-font {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	line-height: 1em;
+}
+
+@mixin body-font {
+	font-family: 'Murecho', sans-serif;
+}
+
+@mixin cont-inner {
+	width: 900px;
+	margin: 0 auto;
+
+	@include mediaquery(sp) {
+		width: 100%;
+	}
+}
+
+
 // -------- index --------//
 body {
 	@include body-font;
+	font-size: 14px;
 	color: $txt-color;
+	line-height: 1.4;
+	min-width: 900px;
+
+	@include mediaquery(sp) {
+		min-width: auto;
+	}
+}
+
+img {
+	width: 100%;
+	height: auto;
 }
 
 .index {
@@ -57,10 +81,10 @@ body {
 	}
 
 	&__ttl {
+		@include accent-font;
 		width: calc(100% - 90px);
 		padding-left: 30px;
 		font-size: 26px;
-		@include accent-font;
 
 		@include mediaquery(sp) {
 			width: calc(100% - 70px);
@@ -70,11 +94,11 @@ body {
 	}
 
 	&__btn {
-		width: 90px;
 		display: flex;
-		height: 100%;
 		align-items: center;
 		justify-content: center;
+		width: 90px;
+		height: 100%;
 		border-left: 2px $txt-color solid;
 
 		@include mediaquery(sp) {
@@ -102,12 +126,12 @@ body {
 	}
 
 	&__txt {
+		@include accent-font;
 		position: absolute;
 		top: 220px;
 		left: 10%;
 		font-size: 44px;
 		color: $main-color;
-		@include accent-font;
 
 		@include mediaquery(sp) {
 			top: 170px;
@@ -116,3 +140,236 @@ body {
 		}
 	}
 }//mv
+
+.about {
+	padding: 120px 0;
+	background: url("/me/img/about_bg_01.svg") no-repeat -110px 60px/570px 490px,
+	url("/me/img/about_bg_02.svg") no-repeat 120% 250px/580px 580px;
+
+	@include mediaquery(sp) {
+		padding: 80px 0;
+		background: url("/me/img/about_bg_01.svg") no-repeat 10px -60px/580px 500px;
+	}
+
+	&__inner {
+		@include cont-inner;
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__ttl {
+		@include accent-font;
+		position: absolute;
+		top: 30px;
+		left: 0;
+		z-index: 1;
+		font-size: 60px;
+		color: $main-color;
+
+		@include mediaquery(sp) {
+			top: -0.6em;
+			left: 5px;
+			font-size: 52px;
+		}
+	}
+
+	&__wrap {
+		width: 835px;
+
+		@include mediaquery(sp) {
+			width: calc(100% - 20px);
+		}
+
+		&__img {
+			margin-bottom: 20px;
+		}
+
+		&__detail {
+			&__txt {
+				margin-bottom: 40px;
+
+				@include mediaquery(sp) {
+					margin-right: 20px;
+				}
+			}
+
+			&__loves {
+				> dt {
+					@include accent-font;
+					font-size: 18px;
+					font-weight: 400;
+					letter-spacing: 1px;
+				}
+
+				> dd:before {
+					content: "";
+					display: block;
+					height: 1px;
+					position: absolute;
+					top: -10px;
+					right: 0;
+					z-index: 1;
+					border-top: 1px $txt-color solid;
+					width: calc(100% - 75px);
+
+					@include mediaquery(sp) {
+						width: calc(100% - 75px);
+					}
+				}
+
+				> dd {
+					position: relative;
+					padding: 10px 10px 13px;
+					border-bottom: 1px $txt-color solid;
+				}
+			}
+		}
+	}
+}//about
+
+.skills {
+	padding: 80px 0;
+	background: $main-color;
+
+	@include mediaquery(sp) {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__inner {
+		@include cont-inner;
+		position: relative;
+
+		@include mediaquery(sp) {
+			width: calc(100% - 20px);
+			margin: initial;
+		}
+	}
+
+	&__ttl {
+		@include accent-font;
+		position: absolute;
+		top: -30px;
+		left: 0;
+		z-index: 1;
+		font-size: 60px;
+		color: $accent-color;
+
+		@include mediaquery(sp) {
+			top: -0.5em;
+			left: -15px;
+			font-size: 52px;
+		}
+	}
+
+	&__skill {
+		display: flex;
+		justify-content: space-between;
+		padding: 60px 60px 30px 60px;
+		border-radius: 20px 20px 0 0;
+		background: #fff;
+
+		@include mediaquery(sp) {
+			display: block;
+			padding: 60px 20px 30px 20px;
+			border-radius: 10px 0 0 0;
+		}
+	}
+
+	&__learning {
+		display: flex;
+		justify-content: space-between;
+		padding: 30px 60px 60px 60px;
+		border-radius: 0 0 20px 20px;
+		background: #F5F5F4;
+		position: relative;
+		overflow: hidden;
+
+		@include mediaquery(sp) {
+			display: block;
+			padding: 20px 20px 60px 20px;
+			border-radius: 0 0 0 10px;
+		}
+
+		&:after {
+			content: "";
+			background: url(/me/img/img_code.svg) no-repeat 0 0/310px 275px;
+			position: absolute;
+			top: 10px;
+			right: 90px;
+			width: 310px;
+			height: 275px;
+
+			@include mediaquery(sp) {
+				display: none;
+			}
+		}
+	}
+
+	&__item {
+		width: 48%;
+
+		@include mediaquery(sp) {
+			width: 100%;
+			margin-bottom: 30px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		&__ttl {
+			@include accent-font;
+			margin-bottom: 15px;
+			font-size: 26px;
+
+			&--skill { color: $txt-color; }
+			&--learning { color: $main-color; }
+		}
+
+		&__list {
+			margin-bottom: -10px;
+			font-size: 0;
+
+			> li {
+				@include accent-font;
+				display: inline-block;
+				margin: 0 10px 10px 0;
+				padding: 7px 20px;
+				border-radius: 3px;
+				font-size: 14px;
+			}
+
+			&--skill >li { color: #fff; background-color: $sub-color; }
+			&--learning >li { color: $main-color; background-color: #fff; }
+		}
+	}
+}//skills
+
+.works {
+	display: none;
+}//works
+
+.footer {
+	padding: 50px 0 35px;
+	text-align: center;
+	background:$txt-color;
+
+	&__social {
+		margin-bottom: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		> li {
+			width: 45px;
+			margin: 0 15px;
+		}
+	}
+
+	&__licence {
+		font-size: 12px;
+		color: #959595;
+	}
+}//footer
