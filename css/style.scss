@@ -231,11 +231,11 @@ img {
 .mv {
   position: relative;
   height: 400px;
-  background: url("/me/img/me/img_mv_pc.png") no-repeat center/cover;
+  background: url("/me/img/img_mv_pc.png") no-repeat center/cover;
 
   @include mediaquery(sp) {
     height: 553px;
-    background: url("/me/img/me/img_mv_sp.png") no-repeat center/cover;
+    background: url("/me/img/img_mv_sp.png") no-repeat center/cover;
   }
 
   &__txt {
