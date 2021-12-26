@@ -10,11 +10,11 @@
   .mv {
     position: relative;
     height: 400px;
-    background: url("/src/img/index/img_mv_pc.png") no-repeat center/cover;
+    background: url("../src/img/index/img_mv_pc.png") no-repeat center/cover;
 
     @include common.mediaquery(sp) {
       height: 553px;
-      background: url("/src/img/index/img_mv_sp.png") no-repeat center/cover;
+      background: url("../src/img/index/img_mv_sp.png") no-repeat center/cover;
     }
 
     &__txt {
@@ -35,11 +35,11 @@
 
   .about {
     padding: 120px 0;
-    background: url("/src/img/index/about_bg_01.svg") no-repeat -110px 60px/570px 490px, url("/src/img/index/about_bg_02.svg") no-repeat 120% 250px/580px 580px;
+    background: url("../src/img/index/about_bg_01.svg") no-repeat -110px 60px/570px 490px, url("../src/img/index/about_bg_02.svg") no-repeat 120% 250px/580px 580px;
 
     @include common.mediaquery(sp) {
       padding: 80px 0;
-      background: url("/src/img/index/about_bg_01.svg") no-repeat 10px -60px/580px 500px;
+      background: url("../src/img/index/about_bg_01.svg") no-repeat 10px -60px/580px 500px;
     }
 
     &__inner {
