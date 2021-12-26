@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>rix - portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Murecho&family=Poppins:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/works.min.css">
+  <script>console.log("Chromebug");</script>
+</head>
+
+<body>
+  <article class="works">
+    <header class="header">
+      <h1 class="header__ttl"><a href="/">rix</a></h1>
+      <button class="header__togglebtn">
+        <span></span>
+      </button>
+    </header>
+    <div class="nav">
+      <nav class="nav__list">
+        <ul>
+          <li><a href="/#link_about">About me</a></li>
+          <li><a href="/#link_skills">Skills</a></li>
+          <li><a href="/#link_works">Works</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main class="main">
+      <section class="work">
+        <div class="work__intro">
+          <div class="work__intro__inner">
+            <h2 class="work__intro__ttl">rix's portfolio</h2>
+            <p class="work__intro__cate">website</p>
+          </div>
+        </div>
+        <div class="work__detail">
+          <img class="work__detail__img" src="/src/img/works/img_mv_rix.png" alt="">
+          <p class="work__detail__txt">VScode、git(CUI)、github、Dockerの使い方を学ぶため、これらのツールを使用し製作したサイトです。その他、仕事ではあまり使う機会の無かったプロパティを積極的に使うようにしました。（今更ながらanimationなど…）<br>リポジトリは<a href="https://github.com/rixcx/me" target="_blank">こちら</a>。</p>
+          <div class="work__detail__comment">
+            <p class="work__detail__comment__ttl">Comment</p>
+            <p class="work__detail__comment__txt">上記ツールのスキルアップの他、新しくMacBookを購入したのでsassやgitなどの開発環境を整える目的もありました。とにかく一通り着地することを重視したため、デザインの細かいところまで行き届いてないのが反省点。近いうちに作り直します。</p>
+          </div>
+          <div class="work__detail__info">
+            <dl>
+              <dt>Date</dt>
+              <dd>2021/12</dd>
+              <dt>Skills</dt>
+              <dd>Adobe XD　VScode　HTML5　Sass(scss)　gulp　 git(CUI)　github　Docker(httpdイメージ)</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <ul class="footer__social">
+        <li><a href="https://github.com/rixcx" target="_blank"><img src="/src/img/index/ico_github.png" width="92" height="92" alt="github"></a></li>
+        <li><a href="https://twitter.com/xcx_04" target="_blank"><img src="/src/img/index/ico_twitter.png" width="92" height="76" alt="twitter"></a></li>
+      </ul>
+      <small class="footer__licence">&copy; 2021 rix</small>
+    </footer>
+  </article>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/src/js/toggle.js"></script>
+  <script src="/src/js/comment.js"></script>
+
+</body>
+
+</html>

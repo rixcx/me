@@ -72,6 +72,11 @@ body {
   min-width: 900px;
   background: $bg-color;
 
+  ::selection {
+    background-color: #094E63;
+    color: #d0c6b5;
+  }
+
   @include mediaquery(sp) {
     min-width: auto;
   }
