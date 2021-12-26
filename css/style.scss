@@ -231,11 +231,11 @@ img {
 .mv {
   position: relative;
   height: 400px;
-  background: url("/me/img/img_mv_pc.png") no-repeat center/cover;
+  background: url("/img/index/img_mv_pc.png") no-repeat center/cover;
 
   @include mediaquery(sp) {
     height: 553px;
-    background: url("/me/img/img_mv_sp.png") no-repeat center/cover;
+    background: url("/img/index/img_mv_sp.png") no-repeat center/cover;
   }
 
   &__txt {
@@ -256,11 +256,11 @@ img {
 
 .about {
   padding: 120px 0;
-  background: url("/me/img/about_bg_01.svg") no-repeat -110px 60px/570px 490px, url("/me/img/about_bg_02.svg") no-repeat 120% 250px/580px 580px;
+  background: url("/img/index/about_bg_01.svg") no-repeat -110px 60px/570px 490px, url("/img/index/about_bg_02.svg") no-repeat 120% 250px/580px 580px;
 
   @include mediaquery(sp) {
     padding: 80px 0;
-    background: url("/me/img/about_bg_01.svg") no-repeat 10px -60px/580px 500px;
+    background: url("/img/index/about_bg_01.svg") no-repeat 10px -60px/580px 500px;
   }
 
   &__inner {
@@ -406,7 +406,7 @@ img {
 
     &:after {
       content: "";
-      background: url(/me/img/img_code.svg) no-repeat 0 0/310px 275px;
+      background: url(img/img_code.svg) no-repeat 0 0/310px 275px;
       position: absolute;
       top: 10px;
       right: 90px;
