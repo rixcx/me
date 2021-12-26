@@ -1,0 +1,37 @@
+/* ----------------- footer ----------------- */
+@charset "UTF-8";
+
+// -------- use --------//
+@use "_common";
+
+.footer {
+  margin-top: 160px;
+  padding: 50px 0 35px;
+  text-align: center;
+  background: common.$txt-color;
+
+  &__social {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > li {
+      width: 45px;
+      margin: 0 15px;
+
+      > a {
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          opacity: common.$hover-opacity;
+        }
+      }
+    }
+  }
+
+  &__licence {
+    font-size: 12px;
+    color: #959595;
+  }
+} //footer

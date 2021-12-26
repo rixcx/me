@@ -18,7 +18,7 @@ const rename = require("gulp-rename");
 //  関数定義
 //----------------------------------------------------------------------
 gulp.task('compile', function(done) {
-	src("css/*.scss")
+	src("src/sass/*.scss")
 	.pipe(plumber())
 	.pipe(sass())
 	.pipe(autoprefixer())
@@ -31,7 +31,7 @@ gulp.task('compile', function(done) {
 })
 
 gulp.task('watch', function() {
-	gulp.watch('css/*.scss', gulp.series('compile'))
+	gulp.watch('src/sass/*.scss', gulp.series('compile'))
 })
 
 //----------------------------------------------------------------------

@@ -1,4 +1,4 @@
-/* ----------------- index ----------------- */
+/* ----------------- works ----------------- */
 @charset "UTF-8";
 
 // -------- variable --------//
@@ -13,7 +13,7 @@ $hover-opacity: 0.7;
 // -------- mediaquery --------//
 $breakpoint: (
   sp: "screen and (max-width: 767px)",
-  pc: "screen and (min-width: 1040px)",
+  pc: "screen and (min-width: 768px)",
 );
 
 @mixin mediaquery($device) {
@@ -39,6 +39,27 @@ $breakpoint: (
 
   @include mediaquery(sp) {
     width: 100%;
+  }
+}
+
+// -------- common --------//
+.only-pc {
+  @include mediaquery(pc) {
+    display: block;
+  }
+
+  @include mediaquery(sp) {
+    display: none;
+  }
+}
+
+.only-sp {
+  @include mediaquery(pc) {
+    display: none;
+  }
+
+  @include mediaquery(sp) {
+    display: block;
   }
 }
 
@@ -470,10 +491,66 @@ img {
 } //skills
 
 .works {
-  display: none;
+  padding: 140px 0 0;
+
+    @include mediaquery(sp) {
+      padding: 80px 0 0;
+    }
+
+  &__inner {
+    @include cont-inner;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__ttl {
+    @include accent-font;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    z-index: 1;
+    font-size: 60px;
+    color: $main-color;
+
+    @include mediaquery(sp) {
+      top: -0.6em;
+      left: 5px;
+      font-size: 52px;
+    }
+  }
+
+  &__list {
+      @include mediaquery(sp) {
+       width: calc(100% - 20px);
+      }
+
+    > li {
+      margin-bottom: 30px;
+
+      &:last-child {
+       margin-bottom: 0;
+      }
+
+      > a {
+      display: inline-block;
+      overflow: hidden;
+
+         > img {
+          transition: all 0.3s ease-in-out;
+          
+          &:hover {
+            filter: grayscale(50%);
+            transform: scale(1.03);
+          }
+        }
+      }
+    }
+  }
 } //works
 
 .footer {
+  margin-top: 160px;
   padding: 50px 0 35px;
   text-align: center;
   background: $txt-color;

@@ -1,0 +1,83 @@
+/* ----------------- common ----------------- */
+@charset "UTF-8";
+
+// -------- variable --------//
+$txt-color: #272727;
+$main-color: #022b53;
+$accent-color: #f77272;
+$sub-color: #fccc93;
+$bg-color: #f8f8f8;
+
+$hover-opacity: 0.7;
+
+// -------- mediaquery --------//
+$breakpoint: (
+  sp: "screen and (max-width: 767px)",
+  pc: "screen and (min-width: 768px)",
+);
+
+@mixin mediaquery($device) {
+  @media #{map-get($breakpoint, $device)} {
+    @content;
+  }
+}
+
+// -------- mixin --------//
+@mixin accent-font {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 1em;
+}
+
+@mixin body-font {
+  font-family: "Murecho", sans-serif;
+}
+
+@mixin cont-inner {
+  width: 900px;
+  margin: 0 auto;
+
+  @include mediaquery(sp) {
+    width: 100%;
+  }
+}
+
+// -------- only --------//
+.only-pc {
+  @include mediaquery(pc) {
+    display: block;
+  }
+
+  @include mediaquery(sp) {
+    display: none;
+  }
+}
+
+.only-sp {
+  @include mediaquery(pc) {
+    display: none;
+  }
+
+  @include mediaquery(sp) {
+    display: block;
+  }
+}
+
+// -------- index --------//
+body {
+  @include body-font;
+  font-size: 14px;
+  color: $txt-color;
+  line-height: 1.4;
+  min-width: 900px;
+  background: $bg-color;
+
+  @include mediaquery(sp) {
+    min-width: auto;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
