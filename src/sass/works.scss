@@ -102,46 +102,8 @@
         }
       }
 
-      &__txt {
-        margin-bottom: 20px;
-        line-height: 1.6;
-
-        > a {
-          color: #909090;
-          transition: all 0.1s ease-in-out;
-
-          &:hover {
-            opacity: common.$hover-opacity;
-          }
-        }
-      }
-
-      &__comment {
-        color: #909090;
-        margin-bottom: 30px;
-
-        &__ttl {
-          display: inline-block;
-          cursor: pointer;
-
-          &::before {
-            content: "#";
-            margin-right: 5px;
-            transition: all 0.1s ease-in-out;
-          }
-
-          &:hover::before,
-          &.active::before {
-            color: common.$accent-color;
-          }
-        }
-
-        &__txt {
-          display: none;
-        }
-      }
-
       &__info {
+        margin-bottom: 20px;
         padding: 20px;
         background-color: #fff;
         border-radius: 20px;
@@ -175,6 +137,54 @@
             width: calc(100% - 5em);
             color: #909090;
           }
+        }
+      }
+
+      &__txt {
+        line-height: 1.6;
+        margin-bottom: 20px;
+        > a {
+          color: #909090;
+          transition: all 0.1s ease-in-out;
+
+          &:hover {
+            opacity: common.$hover-opacity;
+          }
+        }
+      }
+
+      &__comment {
+        color: #909090;
+        margin-bottom: 30px;
+
+        &__ttl {
+        padding-left: 20px;
+          display: inline-block;
+          cursor: pointer;
+           position: relative;
+
+          &::before {
+            content: "";
+            margin-right: 5px;
+            transition: all 0.1s ease-in-out;
+            width: 8px;
+            height: 8px;
+            border-top: solid 1.5px #909090;
+            border-right: solid 1.5px #909090;
+            position: absolute;
+            left: 3px;
+            top: 5px;
+            transform: rotate(135deg);
+          }
+
+          &:hover::before,
+          &.active::before {
+            border-color: common.$accent-color;
+          }
+        }
+
+        &__txt {
+          display: none;
         }
       }
     }
