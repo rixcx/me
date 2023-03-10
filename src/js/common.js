@@ -1,3 +1,7 @@
+$(window).on('load',function(){
+  $('.nav').removeClass('preload');
+});
+
 $('.header__togglebtn').click (function(){
   $(this).toggleClass('active');
   $('.nav').toggleClass('open');
