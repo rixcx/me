@@ -8,7 +8,7 @@ let noTodo = "";
 let saveTodos = JSON.parse(localStorage.getItem("saveTodos"));
 
 const noTodoHtml = `<div id="noTodo" class="mt-5 mb-5 row justify-content-center">
-  <img src="img/noTodo.png" alt="noTodo" class="col-md-6 col-10">
+  <img src="img/notodo.png" alt="notodo" class="col-md-6 col-10">
 </div>`;
 
 if (saveTodos) {
